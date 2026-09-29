@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/icon-192.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#dc2626" />
+    <meta name="description" content="RuralCare: Fast, simple, safe, and trustworthy rural emergency healthcare platform. Real-time hospital beds, nearby PHCs/CHCs, ambulance dispatch, and emergency support." />
+    <meta name="keywords" content="rural healthcare, emergency beds, ICU beds, ambulance, Maharashtra rural hospitals, PHC, CHC, 108 ambulance" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>RuralCare — Rural Emergency Healthcare & Bed Availability</title>
+  </head>
+  <body class="bg-slate-50 text-slate-900 antialiased selection:bg-red-500 selection:text-white min-h-screen">
+    <noscript>
+      <div style="background-color: #dc2626; color: white; padding: 20px; text-align: center; font-family: sans-serif;">
+        <h2>EMERGENCY NOTICE</h2>
+        <p>JavaScript is required to use the interactive RuralCare app.</p>
+        <p><strong>For Immediate Medical Emergencies, Dial:</strong></p>
+        <p style="font-size: 24px; font-weight: bold;">Ambulance: 108 | Emergency: 112 | Maternal/Infant: 102</p>
+      </div>
+    </noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator && window.location.protocol.startsWith('http')) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(err => {
+            console.log('SW registration error:', err);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
